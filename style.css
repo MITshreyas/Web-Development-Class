@@ -96,10 +96,17 @@ main > section {
     border-radius: 0.75rem;
 }
 
+#about {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 2rem;
+}
+
 #about figure {
-    float: left;
-    margin: 0 2rem 1rem 0;
+    margin: 0;
     text-align: center;
+    flex-shrink: 0;
 }
 
 #about figure img {
@@ -115,7 +122,14 @@ main > section {
     color: var(--muted);
 }
 
-.about-text { overflow: hidden; }
+#about h2 {
+    width: 100%;
+}
+
+.about-text {
+    flex: 1;
+    min-width: 300px;
+}
 
 #skills { background-color: var(--panel); }
 
