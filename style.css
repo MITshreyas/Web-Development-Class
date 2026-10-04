@@ -1,0 +1,246 @@
+:root {
+    --ink: #1d2430;
+    --paper: #fdfaf5;
+    --panel: #f3ede4;
+    --accent: #b23a0e;
+    --tea: #7a3e12;
+    --muted: #5c6773;
+    --line: #d6dce3;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--ink);
+    background: var(--paper);
+}
+
+h1,
+h2,
+h3 {
+    font-family: Georgia, "Times New Roman", serif;
+    color: var(--tea);
+    line-height: 1.2;
+}
+
+h1 { font-size: 2.2rem; }
+h2 { font-size: 1.8rem; margin-bottom: 1.25rem; }
+h3 { font-size: 1.3rem; margin-bottom: 0.75rem; }
+
+p {
+    color: var(--muted);
+    max-width: 65ch;
+    margin-bottom: 1rem;
+}
+
+a { color: var(--accent); }
+a:hover { color: var(--tea); }
+
+header {
+    background-color: var(--ink);
+    color: #fff;
+}
+
+.header-content {
+    max-width: 68rem;
+    margin: 0 auto;
+    padding: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+header h1 { color: #fff; margin: 0; }
+
+nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    list-style: none;
+}
+
+nav a {
+    display: block;
+    padding: 0.5rem 0.75rem;
+    color: #fff;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 0.4rem;
+}
+
+nav a:hover {
+    background-color: #fff;
+    color: var(--ink);
+}
+
+main {
+    max-width: 68rem;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+main > section {
+    margin: 2rem 0;
+    padding: 2rem;
+    background-color: #fff;
+    border: 1px solid var(--line);
+    border-radius: 0.75rem;
+}
+
+#about figure {
+    float: left;
+    margin: 0 2rem 1rem 0;
+    text-align: center;
+}
+
+#about figure img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid var(--accent);
+}
+
+#about figcaption {
+    margin-top: 0.5rem;
+    color: var(--muted);
+}
+
+.about-text { overflow: hidden; }
+
+#skills { background-color: var(--panel); }
+
+#skills dl {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+#skills dl > div {
+    padding: 1rem;
+    background-color: #fff;
+    border: 1px solid var(--line);
+    border-radius: 0.5rem;
+}
+
+#skills dt {
+    margin-bottom: 0.4rem;
+    color: var(--tea);
+    font-weight: bold;
+}
+
+#skills dd { color: var(--muted); }
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+article {
+    padding: 1.5rem;
+    background-color: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 0.5rem;
+}
+
+.project-link {
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.project-link:hover { text-decoration: underline; }
+
+form { max-width: 36rem; }
+
+label {
+    display: block;
+    margin-bottom: 0.25rem;
+    font-weight: bold;
+    color: var(--ink);
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 0.75rem;
+    font-family: inherit;
+    font-size: 1rem;
+    color: var(--ink);
+    background-color: #fff;
+    border: 2px solid var(--line);
+    border-radius: 0.5rem;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+    outline: 2px solid var(--accent);
+    border-color: var(--accent);
+}
+
+textarea { resize: vertical; }
+
+button {
+    padding: 0.75rem 1.5rem;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #fff;
+    background-color: var(--accent);
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+
+button:hover { background-color: var(--tea); }
+
+footer {
+    margin-top: 2rem;
+    padding: 1.5rem 1rem;
+    text-align: center;
+    background-color: var(--ink);
+}
+
+footer p {
+    margin: 0.25rem auto;
+    color: #fff;
+}
+
+footer a { color: #fff; }
+
+@media (max-width: 48rem) {
+    h1 { font-size: 1.8rem; }
+
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul { justify-content: center; }
+
+    main > section { padding: 1.5rem; }
+
+    #about figure {
+        float: none;
+        margin: 0 auto 1.5rem;
+    }
+
+    #about figure img { margin: 0 auto; }
+    .about-text { overflow: visible; }
+
+    #skills dl,
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+}
