@@ -1,11 +1,15 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shreyas Kandel</title>
     <link rel="stylesheet" href="style.css">
+    <script src="slider.js" defer></script>
 </head>
+
 <body id="top">
     <header>
         <div class="header-content">
@@ -15,6 +19,7 @@
                     <li><a href="#about">About</a></li>
                     <li><a href="#skills">Skills</a></li>
                     <li><a href="#projects">Projects</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
@@ -29,19 +34,38 @@
                 <figcaption><strong>My Profile</strong></figcaption>
             </figure>
             <div class="about-text">
-                <p>Hello! My name is Shreyas Kandel. I am a student interested in web development and information technology. I enjoy learning how websites are designed, developed, and maintained using modern web technologies.</p>
-                <p>I am currently developing my technical skills in HTML, programming, databases, and web development. My goal is to continue improving my knowledge and create accessible, user-friendly, and well-structured websites.</p>
+                <p>Hello! My name is Shreyas Kandel. I am a student interested in web development and information
+                    technology. I enjoy learning how websites are designed, developed, and maintained using modern web
+                    technologies.</p>
+                <p>I am currently developing my technical skills in HTML, programming, databases, and web development.
+                    My goal is to continue improving my knowledge and create accessible, user-friendly, and
+                    well-structured websites.</p>
             </div>
         </section>
 
         <section id="skills">
             <h2>Technical Skills</h2>
             <dl>
-                <div><dt>HTML5</dt><dd>Creating structured and semantic web pages using modern HTML5 elements.</dd></div>
-                <div><dt>CSS</dt><dd>Understanding the fundamentals of styling and responsive web design.</dd></div>
-                <div><dt>JavaScript</dt><dd>Basic knowledge of programming and adding interactivity to web pages.</dd></div>
-                <div><dt>Git and GitHub</dt><dd>Managing source code and collaborating on projects using version control.</dd></div>
-                <div><dt>Database</dt><dd>Basic understanding of databases, data organization, and database management concepts.</dd></div>
+                <div>
+                    <dt>HTML5</dt>
+                    <dd>Creating structured and semantic web pages using modern HTML5 elements.</dd>
+                </div>
+                <div>
+                    <dt>CSS</dt>
+                    <dd>Understanding the fundamentals of styling and responsive web design.</dd>
+                </div>
+                <div>
+                    <dt>JavaScript</dt>
+                    <dd>Basic knowledge of programming and adding interactivity to web pages.</dd>
+                </div>
+                <div>
+                    <dt>Git and GitHub</dt>
+                    <dd>Managing source code and collaborating on projects using version control.</dd>
+                </div>
+                <div>
+                    <dt>Database</dt>
+                    <dd>Basic understanding of databases, data organization, and database management concepts.</dd>
+                </div>
             </dl>
         </section>
 
@@ -50,14 +74,48 @@
             <div class="project-grid">
                 <article>
                     <h3>To-Do List</h3>
-                    <p>The To-Do List project is a task management application that allows users to organize and manage their daily tasks. This project demonstrates fundamental programming and web development concepts, including user interaction and structured application design.</p>
-                    <p><a class="project-link" href="https://github.com/MITshreyas/To-dolist" target="_blank" rel="noopener noreferrer">View To-Do List Repository</a></p>
+                    <p>The To-Do List project is a task management application that allows users to organize and manage
+                        their daily tasks. This project demonstrates fundamental programming and web development
+                        concepts, including user interaction and structured application design.</p>
+                    <p><a class="project-link" href="https://github.com/MITshreyas/To-dolist" target="_blank"
+                            rel="noopener noreferrer">View To-Do List Repository</a></p>
                 </article>
                 <article>
                     <h3>Bus Ticket System</h3>
-                    <p>The Bus Ticket System is a project designed to support bus ticket booking and management. It demonstrates the use of programming concepts to organize transportation-related information and provide functionality for managing ticket reservations.</p>
-                    <p><a class="project-link" href="https://github.com/MITshreyas/BusTicketSystem" target="_blank" rel="noopener noreferrer">View Bus Ticket System Repository</a></p>
+                    <p>The Bus Ticket System is a project designed to support bus ticket booking and management. It
+                        demonstrates the use of programming concepts to organize transportation-related information and
+                        provide functionality for managing ticket reservations.</p>
+                    <p><a class="project-link" href="https://github.com/MITshreyas/BusTicketSystem" target="_blank"
+                            rel="noopener noreferrer">View Bus Ticket System Repository</a></p>
                 </article>
+            </div>
+        </section>
+
+        <section id="gallery">
+            <h2>Image Slider</h2>
+            <div class="slider" aria-roledescription="carousel" aria-label="Photo gallery">
+                <div class="slider-stage">
+                    <div class="slider-window">
+                        <div class="slider-track">
+                            <figure class="slide"><img src="images/slide-1.jpg"
+                                    alt="" width="1200"
+                                    height="600"></figure>
+                            <figure class="slide"><img src="images/slide-2.jpg"
+                                    alt="" width="1200" height="600"></figure>
+                            <figure class="slide"><img src="images/slide-3.jpg"
+                                    alt="" width="1200" height="600"></figure>
+                            <figure class="slide"><img src="images/slide-4.jpg"
+                                    alt="" width="1200"
+                                    height="600"></figure>
+                            <figure class="slide"><img src="images/slide-5.jpg"
+                                    alt="" width="1200" height="600"></figure>
+                        </div>
+                    </div>
+                    <button class="slider-btn slider-prev" type="button" aria-label="Previous slide">&lsaquo;</button>
+                    <button class="slider-btn slider-next" type="button" aria-label="Next slide">&rsaquo;</button>
+                </div>
+                <div class="slider-dots" role="group" aria-label="Choose a slide"></div>
+                <p class="slider-status" aria-live="polite"></p>
             </div>
         </section>
 
@@ -66,7 +124,8 @@
             <form action="#" method="post">
                 <p><label for="name">Name:</label><input type="text" id="name" name="name" required></p>
                 <p><label for="email">Email:</label><input type="email" id="email" name="email" required></p>
-                <p><label for="message">Message:</label><textarea id="message" name="message" rows="6" required></textarea></p>
+                <p><label for="message">Message:</label><textarea id="message" name="message" rows="6"
+                        required></textarea></p>
                 <p><button type="submit">Send Message</button></p>
             </form>
         </section>
@@ -77,4 +136,5 @@
         <p><a href="#top">Back to Top</a></p>
     </footer>
 </body>
+
 </html>

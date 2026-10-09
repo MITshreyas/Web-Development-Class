@@ -258,3 +258,117 @@ footer a { color: #fff; }
         grid-template-columns: 1fr;
     }
 }
+
+
+/* Image slider */
+.slider {
+    width: 100%;
+    max-width: 48rem;
+    margin: 0 auto;
+}
+
+.slider-stage {
+    position: relative;
+}
+
+.slider-window {
+    overflow: hidden;
+    aspect-ratio: 2 / 1;
+    border: 1px solid var(--line);
+    border-radius: 0.5rem;
+    background: var(--ink);
+}
+
+.slider-track {
+    display: flex;
+    height: 100%;
+    transition: transform 0.5s ease;
+    will-change: transform;
+}
+
+.slide {
+    flex: 0 0 100%;
+    height: 100%;
+}
+
+.slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    font-size: 2rem;
+    line-height: 1;
+    background: rgba(29, 36, 48, 0.75);
+    border-radius: 50%;
+}
+
+.slider-btn:hover { background: var(--ink); }
+.slider-prev { left: 0.75rem; }
+.slider-next { right: 0.75rem; }
+
+.slider-dots {
+    display: flex;
+    justify-content: center;
+    gap: 0.25rem;
+    margin-top: 0.5rem;
+}
+
+.slider-dots button,
+.slider-dots button:hover {
+    position: relative;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    background: transparent;
+}
+
+.slider-dots button::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0.8rem;
+    height: 0.8rem;
+    transform: translate(-50%, -50%);
+    border: 2px solid var(--muted);
+    border-radius: 50%;
+    background: var(--line);
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.slider-dots button:hover::before { background: var(--tea); }
+
+.slider-dots button[aria-current="true"]::before {
+    background: var(--accent);
+    border-color: var(--accent);
+    transform: translate(-50%, -50%) scale(1.3);
+}
+
+.slider-status {
+    margin: 0.25rem auto 0;
+    text-align: center;
+}
+
+@media (max-width: 48rem) {
+    .slider-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1.6rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .slider-track,
+    .slider-dots button::before {
+        transition: none;
+    }
+}
